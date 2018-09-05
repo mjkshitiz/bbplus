@@ -196,18 +196,18 @@ header.masthead h2 {
   }
 }
 
-.portfolio {
+.search {
   margin-bottom: -15px;
 }
 
-.portfolio .portfolio-item {
+.search .portfolio-item {
   position: relative;
   display: block;
   max-width: 25rem;
   margin-bottom: 15px;
 }
 
-.portfolio .portfolio-item .portfolio-item-caption {
+.search .portfolio-item .portfolio-item-caption {
   -webkit-transition: all ease 0.5s;
   -moz-transition: all ease 0.5s;
   transition: all ease 0.5s;
@@ -215,19 +215,19 @@ header.masthead h2 {
   background-color: rgba(24, 188, 156, 0.9);
 }
 
-.portfolio .portfolio-item .portfolio-item-caption:hover {
+.search .portfolio-item .portfolio-item-caption:hover {
   opacity: 1;
 }
 
-.portfolio .portfolio-item .portfolio-item-caption .portfolio-item-caption-content {
+.search .portfolio-item .portfolio-item-caption .portfolio-item-caption-content {
   font-size: 1.5rem;
 }
 
 @media (min-width: 576px) {
-  .portfolio {
+  .search {
     margin-bottom: -30px;
   }
-  .portfolio .portfolio-item {
+  .search .portfolio-item {
     margin-bottom: 30px;
   }
 }

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Modal4Component } from './modal4.component';
+import { UserRequestComponent } from './user-request.component';
 
-describe('Modal4Component', () => {
-  let component: Modal4Component;
-  let fixture: ComponentFixture<Modal4Component>;
+describe('UserRequestComponent', () => {
+  let component: UserRequestComponent;
+  let fixture: ComponentFixture<UserRequestComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ Modal4Component ]
+      declarations: [ UserRequestComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(Modal4Component);
+    fixture = TestBed.createComponent(UserRequestComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
