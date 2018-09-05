@@ -1,231 +1,137 @@
 <br>
 <br>
-<section id="register">
-<div class="container">
-    <h2 class="text-center text-uppercase text-secondary mb-0">Register</h2>
-    <table class="table table-striped">
-       <tbody>
-          <tr>
-             <form class="well form-horizontal" #f = "ngForm" (ngSubmit) = "onClickSubmit(f)">
-                <fieldset>
-                     <td colspan="1" width="500">
-               
-                   
-                      <div class="form-group" [class.has-error]="fullNameControl.invalid && fullNameControl.touched">
-                         <label class="col-md-4 control-label">First Name</label>
-                         <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="fullName" name="fullName" placeholder="Full Name" class="form-control" required="true" value="" type="text" [(ngModel)]="register.fullname" #fullNameControl="ngModel" ><span class="help-block" *ngIf="fullNameControl.invalid && fullNameControl.touched">First Name is required</span></div>
-                         </div>
+<br>
+<br>
+<br>
+<div align="center">
+  <div class="row">
+      <div class="mx-auto col-sm-6">
+
+          <!-- form user info -->
+          <div class="card">
+              <div class="card-header">
+                  <h4 class="mb-0">Register</h4>
+              </div>
+              <div class="card-body">
+                  <form #f="ngForm" (ngSubmit)="onClickSubmit(f)" class="form" role="form" autocomplete="off">
+                      <div class="form-group row has-error" [class.has-error]="firstNameControl.invalid && firstNameControl.touched">
+                          <label class="col-lg-3 col-form-label control-label" for="firstname">First Name</label>
+                          <div class="col-lg-9">
+                              <input required id="firstname" class="form-control" type="text" name="firstname" [(ngModel)]="firstname" [ngClass]="{'is-invalid':firstNameControl.errors && firstNameControl.touched}"
+                                  #firstNameControl="ngModel">
+                              <span class="help-block text-danger" *ngIf="firstNameControl.invalid && firstNameControl.touched">
+                                  First Name is required!
+                              </span>
+                          </div>
                       </div>
-                      <div class="form-group" [class.has-error]="phoneNumber.invalid && phoneNumber.touched">
-                         <label class="col-md-4 control-label">Phone Number</label>
-                         <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="phone" name="phone" placeholder="Phone Number" class="form-control" required="true" value="" type="text" [(ngModel)]="register.phone" #phoneNumber="ngModel"><span class="help-block" *ngIf="phoneNumber.invalid && phoneNumber.touched">Phone Number is required</span></div>
-                         </div>
+
+                      <div class="form-group row">
+                          <label class="col-lg-3 col-form-label control-label" for="middlename">Middle Name</label>
+                          <div class="col-lg-9">
+                              <input required class="form-control" type="text" name="middlename" [(ngModel)]="middlename" [ngClass]="{'is-invalid':middleNameControl.errors && middleNameControl.touched}"
+                                  #middleNameControl="ngModel">
+                              <span class="help-block text-danger" *ngIf="middleNameControl.invalid && middleNameControl.touched">
+                                  Middle Name is required!
+                              </span>
+                          </div>
                       </div>
-                      <!-- <div class="form-group">
-                         <label class="col-md-4 control-label">Email Address</label>
-                         <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="addressLine2" name="addressLine2" placeholder="Address Line 2" class="form-control" required="true" value="" type="text"></div>
-                         </div>
+
+                      <div class="form-group row">
+                          <label class="col-lg-3 col-form-label control-label" for="lastname">Last Name</label>
+                          <div class="col-lg-9">
+
+                              <input required="true" class="form-control" type="text" name="lastname" [(ngModel)]="lastname" [ngClass]="{'is-invalid':lastNameControl.errors && lastNameControl.touched}"
+                                  #lastNameControl="ngModel">
+                              <span class="help-block text-danger" *ngIf="lastNameControl.invalid && lastNameControl.touched">
+                                  Last Name is required!
+                              </span>
+                          </div>
                       </div>
-               -->
-                      <div class="form-group">
-                         <label class="col-md-4 control-label">Blood Type</label>
-                         <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span></div>
-                            <select name="blood-group" class="form-control">
-                                <option value="A+">A+</option>
-                                <option value="B+">B+</option>
-                                <option value="AB+">AB+</option>
-                                <option value="O+">O+</option>
-                                <option value="AB+">B-</option>
-                                <option value="A-">A-</option>
-                                <option value="B-">B-</option>
-                                <option value="AB-">AB-</option>
-                                <option value="O-">O-</option>
+
+                      <div class="form-group row">
+                          <label class="col-lg-3 col-form-label control-label" for="gender">Gender</label>
+                          <div class="col-lg-3">
+
+                              <div class="radio">
+                                  <label><input type="radio" name="gender" checked>Male</label>
+                                  &nbsp;
+                                  <label><input type="radio" name="gender">Female</label>
+                              </div>
+
+                          </div>
+                      </div>
+
+
+                      <div class="form-group row">
+                          <label class="col-lg-3 col-form-label control-label" for="email">Email</label>
+                          <div class="col-lg-9">
+                              <input required class="form-control" type="email" name="email" [(ngModel)]="email" [ngClass]="{'is-invalid':emailControl.errors && emailControl.touched}"
+                                  #emailControl="ngModel" pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?">
+                              <span class="help-block text-danger" *ngIf="emailControl.invalid && emailControl.touched">
+                                  Email is required!
+                              </span>
+                              <span [hidden]="!emailControl.errors?.pattern" class="invalid-feedback text-danger">
+                                  Email is invalid!
+                              </span>
+                          </div>
+                      </div>
+
+                      <div class="form-group row">
+                          <label class="col-lg-3 col-form-label control-label" for="password">Password</label>
+                          <div class="col-lg-9">
+                              <input required class="form-control" type="password" name="password" [(ngModel)]="password" [ngClass]="{'is-invalid':passwordControl.errors && passwordControl.touched}"
+                                  #passwordControl="ngModel">
+                              <span class="help-block text-danger" *ngIf="passwordControl.invalid && passwordControl.touched">
+                                  Password is required!
+                              </span>
+                          </div>
+                      </div>
+
+                      <div class="form-group row">
+                          <label class="col-lg-3 col-form-label control-label" for="blood">Blood Type</label>
+                          <div class="col-lg-9">
+                              <select id="blood" required class="form-control" size="0" name="blood" [(ngModel)]="blood" [ngClass]="{'is-invalid':bloodTypeControl.errors && bloodTypeControl.touched}"
+                                  #bloodTypeControl="ngModel">
+                                  <option value="A+">A+</option>
+                                  <option value="B+">B+</option>
                               </select>
-                         </div>
+                              <span class="help-block text-danger" *ngIf="bloodTypeControl.invalid && bloodTypeControl.touched">
+                                  Blood Type is required!
+                              </span>
+                          </div>
                       </div>
-                      
-                      <div class="form-group">
-                         <label class="col-md-4 control-label">Date of Birth</label>
-                         <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="state" name="state" placeholder="DOB" class="form-control" required="false" value="" type="text" [(ngModel)]="register.dob">
-                            </div>
-                         </div>
+
+                      <div class="form-group row">
+                          <label class="col-lg-3 col-form-label control-label" for="dob">Date of Birth</label>
+                          <div class="col-lg-9">
+                              <input required class="form-control" type="date" name="dob" [(ngModel)]="dob" [ngClass]="{'is-invalid':dobControl.errors && dobControl.touched}"
+                                  #dobControl="ngModel">
+                              <span class="help-block text-danger" *ngIf="dobControl.invalid && dobControl.touched">
+                                  Date of Birth is required!
+                              </span>
+                          </div>
                       </div>
-                      <div class="form-group">
-                         <label class="col-md-4 control-label">Gender</label>
-                         <div class="col-md-8 inputGroupContainer">
-                         <div class="input-group">
-                            <span class="input-group-addon" style="max-width: 100%;"><i class="glyphicon glyphicon-list"></i></span>
-                         <select name="blood-group" class="form-control">
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
-                            <option value="Others">Others</option>
-                          </select>
+
+                      <!-- <div class="form-group row">
+                                  <div class="col-lg-9">
+                                      <input class="form-control" type="hidden" name="expDate" [(ngModel)]="expDate">
+                                  </div>
+                              </div> -->
+
+                      <div class="form-group row">
+                          <label class="col-lg-3 col-form-label control-label"></label>
+                          <div class="col-lg-9">
+                              <button class="btn btn-danger" type="reset">Reset</button>
+                              &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                              <button class="btn btn-success" type="submit" [disabled]="f.invalid">Submit</button>
+                          </div>
+
                       </div>
-                      </div>
-                      </div>
-                      
-                
-  
-             </td>
-             <td colspan="1" width="500">
-        
-                      <div class="form-group" [class.has-error]="lastNameControl.invalid && lastNameControl.touched">
-                         <label class="col-md-4 control-label">Last Name</label>
-                         <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="lastname" name="lastname" placeholder="last Name" class="form-control" required="true" value="" type="text" [(ngModel)]="register.lastname" #lastNameControl="ngModel"><span class="help-block" *ngIf="lastNameControl.invalid && lastNameControl.touched">Last Name is required</span></div>
-                         </div>
-                      </div>
-                      <div class="form-group">
-                         <label class="col-md-4 control-label">Address</label>
-                         <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="Address" name="Address" placeholder="Address" class="form-control" required="true" value="" type="text" [(ngModel)]="register.address" ></div>
-                         </div>
-                      </div>
-                      <div class="form-group">
-                         <label class="col-md-4 control-label">Password</label>
-                         <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="Password" name="Password" placeholder="Password" class="form-control" required="true" value="" type="password" [(ngModel)]="register.password" ></div>
-                         </div>
-                      </div>
-                      <div class="form-group">
-                         <label class="col-md-4 control-label">District</label>
-                         <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="District" name="District" placeholder="District" class="form-control" required="true" value="" type="text" [(ngModel)]="register.district" ></div>
-                         </div>
-                      </div>
-                     
-                         <div class="form-group">
-                         <label class="col-md-4 control-label">Email</label>
-                         <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span><input id="email" name="email" placeholder="Email" class="form-control" required="true" value="" type="email" [(ngModel)]="register.email" ></div>
-                         </div>
-                      </div>
-                   
-                   
-                  </td>
-                  <div class="form-group">
-                      <button type="submit" class="btn btn-primary btn-xl" id="sendMessageButton" [disabled]="f.invalid">Submit</button>
-                    </div>
-                </fieldset>
-            </form>
-          </tr>
-       </tbody>
-    </table>
- </div>
-</section>
-<!-- <section id="contact">
-  <div class="container">
-    <h2 class="text-center text-uppercase text-secondary mb-0">Register</h2>
-    <hr class="star-dark mb-5">
-    <table class="table table-striped">
-     <tbody>
-        <tr>
-            <form name="sentMessage" id="contactForm" novalidate="novalidate">
-           <td colspan="1" >
-               <div class="row">
-                  <div class="col-lg-8 mx-auto">
-                     <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
-                      <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. 
-      
-                     <div class="control-group">
-                        <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                        <label>First Name</label>
-                        <input class="form-control" id="name" type="text" placeholder="First Name" required="required" data-validation-required-message="Please enter your name.">
-                       <p class="help-block text-danger"></p>
-                       </div>
-                     </div>
-                <div class="control-group">
-                  <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                  <label>Email Address</label>
-                   <input class="form-control" id="email" type="email" placeholder="Email Address" required="required" data-validation-required-message="Please enter your email address.">
-                  <p class="help-block text-danger"></p>
-                  </div>
-               </div>
-          <div class="control-group">
-            <div class="form-group floating-label-form-group controls mb-0 pb-2">
-              <label>Phone Number</label>
-              <input class="form-control" id="phone" type="tel" placeholder="Phone Number" required="required" data-validation-required-message="Please enter your phone number.">
-              <p class="help-block text-danger"></p>
-            </div>
+                  </form>
+              </div>
           </div>
-          <div class="control-group">
-            <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                <h4>Blood Type</h4>
-                <select name="blood-group" class="form-control">
-                  <option value="A+">A+</option>
-                  <option value="A-">A-</option>
-                  <option value="B+">B+</option>
-                  <option value="B-">B-</option>
-                </select>
-             
-              <p class="help-block text-danger"></p>
-            </div>
-          </div>
-          <br>
-          <div id="success"></div>
-         </form> 
+          <!-- /form user info -->
+
       </div>
-    </div>
-  </td>
-  <td colspan="1">
-      <div class="row">
-          <div class="col-lg-8 mx-auto">
-             <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
-              <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-<!-- <form name="sentMessage" id="contactForm" novalidate="novalidate"> 
-             <div class="control-group">
-                <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                <label>Last Name</label>
-                <input class="form-control" id="lastname" type="text" placeholder="Last Name" required="required" data-validation-required-message="Please enter your name.">
-               <p class="help-block text-danger"></p>
-               </div>
-             </div>
-        <div class="control-group">
-          <div class="form-group floating-label-form-group controls mb-0 pb-2">
-          <label>Address</label>
-           <input class="form-control" id="email" type="email" placeholder="Address" required="required" data-validation-required-message="Please enter your email address.">
-          <p class="help-block text-danger"></p>
-          </div>
-       </div>
-  <div class="control-group">
-    <div class="form-group floating-label-form-group controls mb-0 pb-2">
-      <label>DOB</label>
-      <input class="form-control" id="DOB" type="tel" placeholder="DOB" required="required" data-validation-required-message="Please enter your phone number.">
-      <p class="help-block text-danger"></p>
-    </div>
   </div>
-  <div class="control-group">
-    <div class="form-group floating-label-form-group controls mb-0 pb-2">
-        <h4>Gender</h4>
-        <select name="blood-group" class="form-control">
-          <option value="A+">Male</option>
-          <option value="A-">Female</option>
-          <option value="B+">Others</option>
-
-        </select>
-     
-      <p class="help-block text-danger"></p>
-    </div>
-  </div>
-  <br>
-  <div id="success"></div>
-  <div class="form-group">
-    <button type="submit" class="btn btn-primary btn-xl" id="sendMessageButton">Submit</button>
-  </div>
-
 </div>
-</div>
-  </td>
-</form>
-  </tr>
-  </tbody>
-  </table>
-  </div>
-</section> 
--->
