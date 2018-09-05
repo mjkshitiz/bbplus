@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginComponent } from '../login/login.component';
 
 @Component({
   selector: 'app-un-reg-navbar',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./un-reg-navbar.component.css']
 })
 export class UnRegNavbarComponent implements OnInit {
+  showLogin: boolean = true;
 
-  constructor() { }
+  constructor(private loginComponent: LoginComponent) { }
+
 
   ngOnInit() {
+  }
+  toggleLogin(): void {
+    if (this.loginComponent.toggle()) {
+    this.showLogin = !this.showLogin;
+  }
   }
 
 }
