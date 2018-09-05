@@ -5,37 +5,111 @@
   <div class="container">
     <h2 class="text-center text-uppercase text-secondary mb-0">Search Blood Donors</h2>
     <hr class="star-dark mb-5">
-     <div  class="col-xs-1" align="center">
-    <form name="sentMessage" id="contactForm" novalidate="novalidate">
-          <div class="control-group" style="width: 300px;">
-            <div class="form-group  controls mb-0 pb-2" >
-              <h3>Blood Type</h3>
-              <select name="blood-group" class="form-control">
-                <option value="A+">A+</option>
-                <option value="A-">A-</option>
-                <option value="B+">B+</option>
-                <option value="B-">B-</option>
-              </select>
-            </div>
-            <div class="form-group controls mb-0 pb-2" >
-              <h3>District</h3>
-              <select name="blood-group" class="form-control">
-                <option value="A+">Bagmati</option>
-                <option value="A-">Karnali</option>
-                <option value="B+">Koshi</option>
-                <option value="B-">Gandaki</option>
-              </select>
-            </div>
+    <div class="col-xs-1" align="center">
+      <form name="sentMessage" id="contactForm" novalidate="novalidate">
+        <div class="control-group" style="width: 300px;">
+          <div class="form-group  controls mb-0 pb-2">
+            <h3>Blood Type</h3>
+            <select name="blood-group" class="form-control">
+              <option value="A+">A+</option>
+              <option value="A-">A-</option>
+              <option value="B+">B+</option>
+              <option value="B-">B-</option>
+              <option value="B-">o-</option>
+              <option value="B-">o+</option>
+            </select>
           </div>
-          
-          <br>
-          <div id="success"></div>
-          <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-xl" id="sendMessageButton">SEARCH</button>
+          <div class="form-group controls mb-0 pb-2">
+            <h3>District</h3>
+            <select name="blood-group" class="form-control">
+              <option value="A+">Bagmati</option>
+              <option value="A-">Karnali</option>
+              <option value="B+">Koshi</option>
+              <option value="B-">Gandaki</option>
+              <option value="A+"> Achham</option>
+              <option value="A+"> Arghakhanchi</option>
+              <option value="A+">Baglung</option>
+              <option value="A+"> Baitadi</option>
+              <option value="A+"> Bajhang</option>
+              <option value="A+">Bajura</option>
+              <option value="A+"> Banke</option>
+              <option value="A+"> Bara</option>
+              <option value="A+"> Bardiya</option>
+              <option value="A+"> Bhojpur</option>
+              <option value="A+"> Chitwan</option>
+              <option value="A+"> Dadeldhura</option>
+              <option value="A+">Dailekh</option>
+              <option value="A+"> Dang</option>
+              <option value="A+"> Darchula</option>
+              <option value="A+"> Dhading</option>
+              <option value="A+"> Dhankuta</option>
+              <option value="A+"> Dhanusa</option>
+              <option value="A+"> Dholkha</option>
+              <option value="A+"> Dolpa</option>
+              <option value="A+"> Doti</option>
+              <option value="A+">Gorkha</option>
+              <option value="A+">Gulmi</option>
+              <option value="A+"> Humla</option>
+              <option value="A+"> Ilam</option>
+              <option value="A+"> Jajarkot</option>
+              <option value="A+"> Jhapa</option>
+              <option value="A+"> Jumla</option>
+              <option value="A+"> Kailali</option>
+              <option value="A+"> Kalikot</option>
+              <option value="A+"> Kanchanpur</option>
+              <option value="A+"> Kapilvastu</option>
+              <option value="A+"> Kaski</option>
+              <option value="A+"> Kathmandu</option>
+              <option value="A+"> Kavrepalanchok</option>
+              <option value="A+"> Khotang</option>
+              <option value="A+"> Lalitpur</option>
+              <option value="A+"> Lamjung</option>
+              <option value="A+"> Mahottari</option>
+              <option value="A+"> Makwanpur</option>
+              <option value="A+"> Manang</option>
+              <option value="A+"> Morang</option>
+              <option value="A+"> Mugu</option>
+              <option value="A+"> Mustang</option>
+              <option value="A+"> Myagdi</option>
+              <option value="A+"> Nawalparasi</option>
+              <option value="A+"> Nuwakot</option>
+              <option value="A+"> Okhaldhunga</option>
+              <option value="A+"> Palpa</option>
+              <option value="A+"> Panchthar</option>
+              <option value="A+"> Parbat</option>
+              <option value="A+"> Parsa Pyuthan</option>
+              <option value="A+"> Ramechhap</option>
+              <option value="A+"> Rasuwa</option>
+              <option value="A+"> Rautahat</option>
+              <option value="A+"> Rolpa Rukum</option>
+              <option value="A+"> Rupandehi</option>
+              <option value="A+"> Salyan</option>
+              <option value="A+"> Sankhuwasabha</option>
+              <option value="A+"> Saptari</option>
+              <option value="A+"> Sarlahi</option>
+              <option value="A+"> Sindhuli</option>
+              <option value="A+"> Sindhupalchok</option>
+              <option value="A+"> Siraha</option>
+              <option value="A+"> Solukhumbu</option>
+              <option value="A+"> Sunsari</option>
+              <option value="A+"> Surkhet</option>
+              <option value="A+"> Syangja</option>
+              <option value="A+"> Tanahu</option>
+              <option value="A+"> Taplejung</option>
+              <option value="A+"> Terhathum</option>
+              <option value="A+"> Udayapur</option>
+            </select>
           </div>
-        </form>
         </div>
-        
+
+        <br>
+        <div id="success"></div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-xl" id="sendMessageButton">SEARCH</button>
+        </div>
+      </form>
+    </div>
+
   </div>
 
 </section>
