@@ -4,10 +4,10 @@ import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-contact',
-  templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.css']
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
 })
-export class ContactComponent implements OnInit {
+export class RegisterComponent implements OnInit {
 register;
   constructor(private http: HttpClient) {
     this.register = {
