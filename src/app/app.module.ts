@@ -14,6 +14,8 @@ import { UnRegNavbarComponent } from './un-reg-navbar/un-reg-navbar.component';
 import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { EventComponent } from './event/event.component';
+import { UserinfoComponent } from './userinfo/userinfo.component';
+import { UserRequestComponent } from './user-request/user-request.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { EventComponent } from './event/event.component';
     Modal1Component,
     UnRegNavbarComponent,
     LoginComponent,
-    EventComponent
+    EventComponent,
+    UserinfoComponent,
+    UserRequestComponent
   ],
   imports: [
     BrowserModule,
