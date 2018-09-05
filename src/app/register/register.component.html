@@ -112,6 +112,20 @@
                           </div>
                       </div>
 
+                      <div class="form-group row">
+                            <label class="col-lg-3 col-form-label control-label" for="phone">Phone Number</label>
+                            <div class="col-lg-9">
+                                <input required class="form-control" type="number" name="phone" [(ngModel)]="phone" [ngClass]="{'is-invalid':phoneControl.errors && phoneControl.touched}"
+                                    #phoneControl="ngModel">
+                                <span class="help-block text-danger" *ngIf="phoneControl.invalid && phoneControl.touched">
+                                    Date of Birth is required!
+                                </span>
+                            </div>
+                        </div>
+
+                              <input required class="form-control" type="hidden" name="entryDate" [(ngModel)]="entryDate">
+                         
+
                       <!-- <div class="form-group row">
                                   <div class="col-lg-9">
                                       <input class="form-control" type="hidden" name="expDate" [(ngModel)]="expDate">
