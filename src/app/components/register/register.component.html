@@ -17,7 +17,7 @@
                       <div class="form-group row has-error" [class.has-error]="firstNameControl.invalid && firstNameControl.touched">
                           <label class="col-lg-3 col-form-label control-label" for="firstname">First Name</label>
                           <div class="col-lg-9">
-                              <input required id="firstname" class="form-control" type="text" name="firstname" [(ngModel)]="firstname" [ngClass]="{'is-invalid':firstNameControl.errors && firstNameControl.touched}"
+                              <input required id="firstname" class="form-control" type="text" name="firstname" [(ngModel)]="user.firstName" [ngClass]="{'is-invalid':firstNameControl.errors && firstNameControl.touched}"
                                   #firstNameControl="ngModel">
                               <span class="help-block text-danger" *ngIf="firstNameControl.invalid && firstNameControl.touched">
                                   First Name is required!
@@ -28,7 +28,7 @@
                       <div class="form-group row">
                           <label class="col-lg-3 col-form-label control-label" for="middlename">Middle Name</label>
                           <div class="col-lg-9">
-                              <input required class="form-control" type="text" name="middlename" [(ngModel)]="middlename" [ngClass]="{'is-invalid':middleNameControl.errors && middleNameControl.touched}"
+                              <input required class="form-control" type="text" name="middlename" [(ngModel)]="user.middleName" [ngClass]="{'is-invalid':middleNameControl.errors && middleNameControl.touched}"
                                   #middleNameControl="ngModel">
                               <span class="help-block text-danger" *ngIf="middleNameControl.invalid && middleNameControl.touched">
                                   Middle Name is required!
@@ -40,7 +40,7 @@
                           <label class="col-lg-3 col-form-label control-label" for="lastname">Last Name</label>
                           <div class="col-lg-9">
 
-                              <input required="true" class="form-control" type="text" name="lastname" [(ngModel)]="lastname" [ngClass]="{'is-invalid':lastNameControl.errors && lastNameControl.touched}"
+                              <input required="true" class="form-control" type="text" name="lastname" [(ngModel)]="user.lastName" [ngClass]="{'is-invalid':lastNameControl.errors && lastNameControl.touched}"
                                   #lastNameControl="ngModel">
                               <span class="help-block text-danger" *ngIf="lastNameControl.invalid && lastNameControl.touched">
                                   Last Name is required!
@@ -53,9 +53,9 @@
                           <div class="col-lg-3">
 
                               <div class="radio">
-                                  <label><input type="radio" name="gender" checked>Male</label>
+                                  <label><input type="radio" name="gender" [(ngModel)]="user.gender" value="Male" checked>Male</label>
                                   &nbsp;
-                                  <label><input type="radio" name="gender">Female</label>
+                                  <label><input type="radio" name="gender" [(ngModel)]="user.gender" value="Female">Female</label>
                               </div>
 
                           </div>
@@ -65,7 +65,7 @@
                       <div class="form-group row">
                           <label class="col-lg-3 col-form-label control-label" for="email">Email</label>
                           <div class="col-lg-9">
-                              <input required class="form-control" type="email" name="email" [(ngModel)]="email" [ngClass]="{'is-invalid':emailControl.errors && emailControl.touched}"
+                              <input required class="form-control" type="email" name="email" [(ngModel)]="user.email" [ngClass]="{'is-invalid':emailControl.errors && emailControl.touched}"
                                   #emailControl="ngModel" pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?">
                               <span class="help-block text-danger" *ngIf="emailControl.invalid && emailControl.touched">
                                   Email is required!
@@ -79,7 +79,7 @@
                       <div class="form-group row">
                           <label class="col-lg-3 col-form-label control-label" for="password">Password</label>
                           <div class="col-lg-9">
-                              <input required class="form-control" type="password" name="password" [(ngModel)]="password" [ngClass]="{'is-invalid':passwordControl.errors && passwordControl.touched}"
+                              <input required class="form-control" type="password" name="password" [(ngModel)]="user.password" [ngClass]="{'is-invalid':passwordControl.errors && passwordControl.touched}"
                                   #passwordControl="ngModel">
                               <span class="help-block text-danger" *ngIf="passwordControl.invalid && passwordControl.touched">
                                   Password is required!
@@ -90,7 +90,7 @@
                       <div class="form-group row">
                           <label class="col-lg-3 col-form-label control-label" for="blood">Blood Type</label>
                           <div class="col-lg-9">
-                              <select id="blood" required class="form-control" size="0" name="blood" [(ngModel)]="blood" [ngClass]="{'is-invalid':bloodTypeControl.errors && bloodTypeControl.touched}"
+                              <select id="blood" required class="form-control" size="0" name="blood" [(ngModel)]="user.bloodtype" [ngClass]="{'is-invalid':bloodTypeControl.errors && bloodTypeControl.touched}"
                                   #bloodTypeControl="ngModel">
                                   <option value="A+">A+</option>
                                   <option value="B+">B+</option>
@@ -104,7 +104,7 @@
                       <div class="form-group row">
                           <label class="col-lg-3 col-form-label control-label" for="dob">Date of Birth</label>
                           <div class="col-lg-9">
-                              <input required class="form-control" type="date" name="dob" [(ngModel)]="dob" [ngClass]="{'is-invalid':dobControl.errors && dobControl.touched}"
+                              <input required class="form-control" type="date" name="dob" [(ngModel)]="user.dateOfBirth" [ngClass]="{'is-invalid':dobControl.errors && dobControl.touched}"
                                   #dobControl="ngModel">
                               <span class="help-block text-danger" *ngIf="dobControl.invalid && dobControl.touched">
                                   Date of Birth is required!
@@ -115,7 +115,7 @@
                       <div class="form-group row">
                             <label class="col-lg-3 col-form-label control-label" for="phone">Phone Number</label>
                             <div class="col-lg-9">
-                                <input required class="form-control" type="number" name="phone" [(ngModel)]="phone" [ngClass]="{'is-invalid':phoneControl.errors && phoneControl.touched}"
+                                <input required class="form-control" type="number" name="phone" [(ngModel)]="user.phoneNo" [ngClass]="{'is-invalid':phoneControl.errors && phoneControl.touched}"
                                     #phoneControl="ngModel">
                                 <span class="help-block text-danger" *ngIf="phoneControl.invalid && phoneControl.touched">
                                     Date of Birth is required!
@@ -123,7 +123,33 @@
                             </div>
                         </div>
 
-                              <input class="form-control" type="hidden" name="entryDate" [(ngModel)]="entryDate">
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label control-label" for="address">Address</label>
+                            <div class="col-lg-9">
+                                <input required class="form-control" type="text" name="address" [(ngModel)]="user.address" [ngClass]="{'is-invalid':addressControl.errors && addressControl.touched}"
+                                    #addressControl="ngModel">
+                                <span class="help-block text-danger" *ngIf="addressControl.invalid && addressControl.touched">
+                                    Address is required!
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label control-label" for="district">District</label>
+                            <div class="col-lg-9">
+                                <select id="district" required class="form-control" size="0" name="district" [(ngModel)]="user.District" [ngClass]="{'is-invalid':districtControl.errors && districtControl.touched}"
+                                    #districtControl="ngModel">
+                                    <option value="Kathmandu">Kathmandu</option>
+                                    <option value="Bhaktapur">Bhaktapur</option>
+                                    <option value="Lalitpur">Lalitpur</option>
+                                </select>
+                                <span class="help-block text-danger" *ngIf="districtControl.invalid && districtControl.touched">
+                                    District is required!
+                                </span>
+                            </div>
+                        </div>
+
+                              <input class="form-control" type="hidden" name="entryDate" [(ngModel)]="user.entryDate">
                          
 
                       <!-- <div class="form-group row">

@@ -13,15 +13,17 @@ import { Router } from '@angular/router';
 export class RegisterComponent implements OnInit {
 
   public user: User;
-
+  
   constructor(private userService: UserServiceService, private router: Router){}
   
 
   ngOnInit() {
-  }
+     this.user = this.userService.getter();
+   }
 
   onClickSubmit() {
-    if (this.user.id == undefined){
+    
+    if (this.user.userId == undefined){
       this.userService.createUser(this.user).subscribe(
         () => {
           console.log(this.user);

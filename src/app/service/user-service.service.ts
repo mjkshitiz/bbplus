@@ -21,11 +21,12 @@ deleteUser(id: number){
 }
 
 createUser(user: User){
-  return this.http.post(this.baseUrl + '/create', user);
+ // console.log(user);
+  return this.http.post(this.baseUrl + '/saveUser', user);
 }
 
 updateUser(user: User) {
-  return this.http.put(this.baseUrl + '/create', user);
+  return this.http.put(this.baseUrl + '/saveUser', user);
 }
 
 setter(user: User){
@@ -33,7 +34,7 @@ setter(user: User){
 }
 
 getter(){
-  return this.user
+  return this.user;
 }
 
 }
