@@ -4,6 +4,9 @@ import { HttpClient } from '@angular/common/http';
 import { User } from '../../model/user';
 import { UserServiceService } from '../../service/user-service.service';
 import { Router } from '@angular/router';
+import { BloodGroup } from '../../model/blood-group';
+import { District } from '../../model/district';
+import { SharedServiceService } from '../../service/shared-service.service';
 
 @Component({
   selector: 'app-contact',
@@ -13,18 +16,47 @@ import { Router } from '@angular/router';
 export class RegisterComponent implements OnInit {
 
   public user: User;
-  
-  constructor(private userService: UserServiceService, private router: Router){}
+  bloodGroup: BloodGroup;
+  district: District;
+  bloodId:any;
+  disId:any;
+  selectedB: number;
+  selectedD: number;
+
+  constructor(private userService: UserServiceService, private router: Router, private sharedService: SharedServiceService){}
   
 
   ngOnInit() {
-     this.user = this.userService.getter();
+
+
+    this.user=this.userService.getter();
+
+
+    this.sharedService.getBloodGroup()
+    .subscribe((res) => {
+      console.log(res);
+      this.bloodGroup = res;
+      this.bloodId=this.bloodGroup.bloodGroupId;
+    }
+  )
+
+    this.sharedService.getDistricts()
+    .subscribe((val) => {
+      console.log(val);
+      this.district = val;
+    this.disId=this.district.districtId;
+    }
+  )
    }
 
   onClickSubmit() {
+
     
     if (this.user.userId == undefined){
-      this.userService.createUser(this.user).subscribe(
+
+this.bloodId=this.selectedB;
+this.disId=this.selectedD;
+     this.userService.createUser(this.user).subscribe(
         () => {
           console.log(this.user);
           this.router.navigate(['/']);

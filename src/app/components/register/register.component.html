@@ -28,7 +28,7 @@
                       <div class="form-group row">
                           <label class="col-lg-3 col-form-label control-label" for="middlename">Middle Name</label>
                           <div class="col-lg-9">
-                              <input required class="form-control" type="text" name="middlename" [(ngModel)]="user.middleName" [ngClass]="{'is-invalid':middleNameControl.errors && middleNameControl.touched}"
+                              <input class="form-control" type="text" name="middlename" [(ngModel)]="user.middleName" [ngClass]="{'is-invalid':middleNameControl.errors && middleNameControl.touched}"
                                   #middleNameControl="ngModel">
                               <span class="help-block text-danger" *ngIf="middleNameControl.invalid && middleNameControl.touched">
                                   Middle Name is required!
@@ -90,10 +90,9 @@
                       <div class="form-group row">
                           <label class="col-lg-3 col-form-label control-label" for="blood">Blood Type</label>
                           <div class="col-lg-9">
-                              <select id="blood" required class="form-control" size="0" name="blood" [(ngModel)]="user.bloodtype" [ngClass]="{'is-invalid':bloodTypeControl.errors && bloodTypeControl.touched}"
+                              <select id="blood" required class="form-control" name="blood" [(ngModel)]="user.bloodType" [ngClass]="{'is-invalid':bloodTypeControl.errors && bloodTypeControl.touched}"
                                   #bloodTypeControl="ngModel">
-                                  <option value="A+">A+</option>
-                                  <option value="B+">B+</option>
+                                  <option value="{{b.bloodType}}" *ngFor="let b of bloodGroup">{{b.bloodType}}</option>
                               </select>
                               <span class="help-block text-danger" *ngIf="bloodTypeControl.invalid && bloodTypeControl.touched">
                                   Blood Type is required!
@@ -137,11 +136,9 @@
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label control-label" for="district">District</label>
                             <div class="col-lg-9">
-                                <select id="district" required class="form-control" size="0" name="district" [(ngModel)]="user.District" [ngClass]="{'is-invalid':districtControl.errors && districtControl.touched}"
+                                <select name="district" id="district" required class="form-control" size="0" name="district" [(ngModel)]="user.District" [ngClass]="{'is-invalid':districtControl.errors && districtControl.touched}"
                                     #districtControl="ngModel">
-                                    <option value="Kathmandu">Kathmandu</option>
-                                    <option value="Bhaktapur">Bhaktapur</option>
-                                    <option value="Lalitpur">Lalitpur</option>
+                                    <option value="{{d.districtId}}" *ngFor="let d of district">{{d.districtName}}</option>                    
                                 </select>
                                 <span class="help-block text-danger" *ngIf="districtControl.invalid && districtControl.touched">
                                     District is required!
